@@ -14,8 +14,6 @@ const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID;
 
 function Form() {
 
-
-
     const [event_name, setEventName] = useState(''); 
     const [location_url, setLocationURL] = useState(''); 
 
