@@ -63,5 +63,6 @@ export default function GoogleLogin() {
     }
   }
 
-  return <div id="googleSignInDiv"></div>;
+  return <div id="googleSignInDiv">
+  BBBBB</div>;
 }
