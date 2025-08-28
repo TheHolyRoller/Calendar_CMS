@@ -1,8 +1,14 @@
 import { Client, Databases, Account } from "appwrite";
 
+const projectId = process.env.APPWRITE_PROJECT_ID;
+
+if (!projectId) {
+  throw new Error('APPWRITE_PROJECT_ID is not defined in environment variables');
+}
+
 const client = new Client()
   .setEndpoint("https://fra.cloud.appwrite.io/v1")
-  .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!); // ✅ fix here
+  .setProject(projectId);
 
 export const account = new Account(client);
 export const databases = new Databases(client);
