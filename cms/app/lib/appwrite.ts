@@ -1,9 +1,13 @@
 import { Client, Databases, Account } from "appwrite";
 
-const projectId = process.env.APPWRITE_PROJECT_ID;
+const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
 
 if (!projectId) {
-  throw new Error('APPWRITE_PROJECT_ID is not defined in environment variables');
+
+
+  console.error('this is the project ID \n', projectId); 
+
+  throw new Error('NEXT_PUBLIC_APPWRITE_PROJECT_ID is not defined in environment variables');
 }
 
 const client = new Client()
