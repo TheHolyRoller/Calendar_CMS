@@ -97,7 +97,7 @@ export const EventProvider = ({children}) => {
 
             } catch (error) {
                 console.error('❌ QuizContext: Error fetching questions:', error);
-                setError(error.message);
+                // setError(error.message);
                 // Log the full error for debugging
                 console.error('Full error details:', {
                     name: error.name,
