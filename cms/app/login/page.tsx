@@ -1,6 +1,4 @@
 "use client";
-import GoogleLogin from "../Components/Googlelogin";
-
 
 
 export default function LoginPage() {
@@ -9,7 +7,6 @@ export default function LoginPage() {
       <hr style={{ margin: "2rem 0" }} />
 
       <h2 style={{ textAlign: "center" }}>Or login with Google</h2>
-      <GoogleLogin />
     </div>
   );
 }
