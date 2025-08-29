@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { OAuthProvider } from "appwrite";
 import ProtectedPage from "../protected/page";
+import Event from "../event/page";
 
 export default function Login() {
   const [user, setUser] = useState<any>(null);
@@ -15,7 +16,7 @@ export default function Login() {
       const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
       account.createOAuth2Session(
         OAuthProvider.Google,
-        `${baseUrl}/protected`,        // Success redirect
+        `${baseUrl}/event`,        // Success redirect
         `${baseUrl}/fail`    // Failure redirect
       );
     } catch (err) {
@@ -56,7 +57,10 @@ export default function Login() {
 
   if (user) {
     console.log('this is the current user', user); 
-    return <ProtectedPage />;
+    // return <ProtectedPage />;
+    return <Event/>; 
+    
+    
   }
 
   if(!user){

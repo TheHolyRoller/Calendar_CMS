@@ -7,7 +7,7 @@ if (!projectId) {
 
   console.error('this is the project ID \n', projectId); 
 
-  throw new Error('NEXT_PUBLIC_APPWRITE_PROJECT_ID is not defined in environment variables');
+  throw new Error('APPWRITE_PROJECT_ID is not defined in environment variables');
 }
 
 const client = new Client()

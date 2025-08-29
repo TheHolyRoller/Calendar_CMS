@@ -35,14 +35,14 @@ function Event() {
 
     return (
         <div>
-            {events.map(event => (
+            {/* {events.map(event => (
                 <div key={event.$id} className="p-2 border-b">
                     <h2>{event.event_name}</h2>
                     <a href={event.location_url} target="_blank" rel="noopener noreferrer">
                         {event.location_url}
                     </a>
                 </div>
-            ))}
+            ))} */}
         </div>
     )
 }

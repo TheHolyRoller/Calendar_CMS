@@ -23,8 +23,13 @@ export const EventProvider = ({children}) => {
 
                 const response = await fetch('/api/events/list');
                 const result = await response.json();
+                console.log('this is the response \n', response); 
+                console.log('this is the result \n', result); 
+                
 
                 if (!response.ok) {
+
+                    console.error('failed to fetch results \n', result.error);
                     throw new Error(result.error || 'Failed to fetch events');
                 }
 
@@ -71,8 +76,16 @@ export const EventProvider = ({children}) => {
             }
 
             // Refresh the events list after creating a new event
-            const refreshResponse = await fetch('/api/events/list');
-            const refreshResult = await refreshResponse.json();
+            try{
+
+                const refreshResponse = await fetch('/api/events/list');
+                const refreshResult = await refreshResponse.json();
+            }
+            catch(error){
+
+                console.error('could not retrieve results from database', error); 
+
+            }
 
             if (refreshResponse.ok) {
                 setEvents(refreshResult.events);
