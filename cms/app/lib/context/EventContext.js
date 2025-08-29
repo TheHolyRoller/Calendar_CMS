@@ -7,9 +7,9 @@ import { usePathname, useRouter } from 'next/navigation';
 import { use } from 'react';
 
 
-
-const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
-const QUESTION_COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID;
+// TO DO change this to use local environment variables. This could cause an error 
+const DATABASE_ID = process.env.APPWRITE_DATABASE_ID;
+const QUESTION_COLLECTION_ID = process.env.APPWRITE_COLLECTION_ID;
 
 
 const eventContext = createContext(null);
